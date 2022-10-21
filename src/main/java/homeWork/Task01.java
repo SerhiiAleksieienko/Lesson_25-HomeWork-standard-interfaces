@@ -10,6 +10,7 @@ import static homeWork.AmountCardsInDeck.amountBigDeck;
 import static homeWork.AmountCardsInDeck.amountLitlDeck;
 
 
+
 public class Task01 {
     public static void main(String[] args) {
         System.out.println("***************************************");           // работа с колодой 36 карт
@@ -39,9 +40,9 @@ public class Task01 {
         System.out.println("______________________________________");
         System.out.println("Проверка сравнения карт на перемешанной колоде на 54 карты:");
 
-        System.out.println("Карта1: " + deck54.cards[5]);
-        System.out.println("Карта2: " + deck54.cards[10]);
-        int n = deck54.cards[5].compareCards(deck54.cards[10]); //результат сравнение карт
+        System.out.println("Карта1: " + deck54.getCards()[5]);
+        System.out.println("Карта2: " + deck54.getCards()[10]);
+        int n = deck54.getCards()[5].compareCards(deck54.getCards()[10]); //результат сравнение карт
         if (n > 0) {
             System.out.println("Карта 1 сильнее");
         } else {
@@ -129,8 +130,8 @@ enum CardName {
 }
 
 class Card implements Comparable {       //создание каждой карты
-    Suite suite;                        // масть карты
-    CardName cardName;                  // наиманование карты
+    private Suite suite;                        // масть карты
+    private CardName cardName;                  // наиманование карты
     private final int sortNumber;       // номер для сортировке колоды в правильном порядке
 
     private int rangCard;
@@ -180,9 +181,9 @@ class AmountCardsInDeck {                       // количество карт
 }
 
 class Deck implements Iterable {                      //колода карт
-    String name;
-    int amount;
-    Card[] cards;
+    private String name;
+    private int amount;
+    private Card[] cards;
 
     Deck(int amount, String name) {                 //инициализация колоды
         this.name = name;
