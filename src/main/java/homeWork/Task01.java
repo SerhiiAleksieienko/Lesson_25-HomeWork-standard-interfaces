@@ -238,7 +238,7 @@ class Deck implements Iterable {                      //колода карт
     }
 
     void sortDesk() {                       // Сортировка колоды карт стандартным метором .sort
-        Arrays.sort(cards);
+        Arrays.sort(cards); // 
     }
 
 
@@ -251,7 +251,7 @@ class Deck implements Iterable {                      //колода карт
 class CardComparatorShuffle implements Comparator { // компаратор для перемешивания - возвращает случайный результат, сравнение не проводит
     @Override
     public int compare(Object o1, Object o2) {
-        Random rnd = new Random();
+        Random rnd = new Random(); // Це краще зробити полем класу
         int m = rnd.nextInt(-5, 5);
         return m;
     }
